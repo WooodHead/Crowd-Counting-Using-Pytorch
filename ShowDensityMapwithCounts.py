@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 
 #show the density map corresponding to the image.
 #density map
-file_path = 'path of your .h5 file'
+file_path = '/Users/scott/projects/pytorch/Crowd-Counting-Using-Pytorch/part_B/train_data/ground-truth/IMG_2.h5'
 gt_file = h5py.File(file_path,'r')
 groundtruth = np.asarray(gt_file['density'])
 image = plt.imshow(groundtruth,cmap=cm.CMRmap)
