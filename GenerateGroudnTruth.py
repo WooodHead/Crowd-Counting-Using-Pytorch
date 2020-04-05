@@ -50,7 +50,7 @@ def gaussian_filter_density(gt):
     print ('done.')
     return density
 
-root = '.'
+root = '/Users/scott/projects/pytorch/Crowd-Counting-Using-Pytorch'
 
 part_B_train = os.path.join(root,'part_B/train_data','images')
 part_B_test = os.path.join(root,'part_B/test_data','images')
@@ -65,7 +65,7 @@ for path in path_sets:
 
 print(img_paths)
 for img_path in img_paths:
-    print (img_path)
+    print ('img_path',img_path)
     mat = io.loadmat(img_path.replace('.jpg','.mat').replace('images','ground-truth').replace('IMG_','GT_IMG_'))
     print('mat',mat)
     img= plt.imread(img_path)
