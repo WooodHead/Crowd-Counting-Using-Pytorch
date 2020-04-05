@@ -50,20 +50,24 @@ def gaussian_filter_density(gt):
     print ('done.')
     return density
 
-root = 'path for dataset'
+root = '.'
 
 part_B_train = os.path.join(root,'part_B/train_data','images')
 part_B_test = os.path.join(root,'part_B/test_data','images')
 path_sets = [part_B_train, part_B_test]
-
+print(part_B_train)
+print(part_B_test)
 img_paths = []
 for path in path_sets:
     for img_path in glob.glob(os.path.join(path, '*.jpg')):
+        print(1,img_path)
         img_paths.append(img_path)
 
+print(img_paths)
 for img_path in img_paths:
     print (img_path)
     mat = io.loadmat(img_path.replace('.jpg','.mat').replace('images','ground-truth').replace('IMG_','GT_IMG_'))
+    print('mat',mat)
     img= plt.imread(img_path)
     k = np.zeros((img.shape[0],img.shape[1]))
     gt = mat["image_info"][0,0][0,0][0]
